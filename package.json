@@ -2,19 +2,25 @@
   "name": "begin",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "start": " node dist/main.js ",
+    "watch": "webpack --mode development --watch & nodemon dist/main",
+    "dev": "  webpack --mode development --progress",
+    "build": "  webpack --mode production --progress",
+    "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json dist"
+  },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-jss": "^10.4.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +36,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.2"
   }
 }
